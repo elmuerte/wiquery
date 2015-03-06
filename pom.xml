@@ -8,28 +8,16 @@
 	<groupId>org.odlabs.wiquery</groupId>
 	<artifactId>wiquery</artifactId>
 	<packaging>jar</packaging>
-	<version>1.2.3</version>
+	<version>1.2.3.1-SNAPSHOT</version>
 
 	<name>WiQuery project</name>
 
 	<scm>
-		<developerConnection>scm:svn:http://wiquery.googlecode.com/svn/trunk/</developerConnection>
+		<developerConnection>scm:git:git@github.com:elmuerte/wiquery.git</developerConnection>
+		<url>https://github.com/elmuerte/wiquery/tree/1.2.3-mpo</url>
 	</scm>
 
-	<distributionManagement>
-		<repository>
-			<uniqueVersion>false</uniqueVersion>
-			<id>wiquery-maven-repo</id>
-			<url>svn:https://wiquery.googlecode.com/svn/repo</url>
-		</repository>
-	</distributionManagement>
-
 	<repositories>
-		<repository>
-			<id>maven repo 1</id>
-			<name>Maven Repository Manager</name>
-			<url>http://repo1.maven.org/maven2/</url>
-		</repository>
 		<repository>
 			<id>maven2-repository.dev.java.net</id>
 			<name>Java.net Repository for Maven</name>
@@ -144,30 +132,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>buildnumber-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>validate</phase>
-						<goals>
-							<goal>create</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<scmConnection>scm:svn:http://wiquery.googlecode.com/svn/trunk</scmConnection>
-					<doCheck>false</doCheck>
-					<doUpdate>false</doUpdate>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<finalName>${project.artifactId}-${project.version}-r${buildNumber}-d${timestamp}</finalName>
-				</configuration>
-			</plugin>
 		</plugins>
 		<extensions>
 			<extension>
@@ -228,4 +192,5 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<description>1.2.3 branch for MPO</description>
 </project>
